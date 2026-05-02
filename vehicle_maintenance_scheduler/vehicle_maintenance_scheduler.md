@@ -100,13 +100,10 @@ python main.py
 
 ## 📸 API Testing (Postman Screenshots)
 
-### 1. Authentication (Token Generation)
-
-![Auth API](./screenshots/auth.png)
 
 ---
 
-### 2. GET Depots API
+### 1. GET Depots API
 
 * Endpoint: `/depots`
 * Method: GET
@@ -115,7 +112,7 @@ python main.py
 
 ---
 
-### 3. GET Vehicles API
+### 2. GET Vehicles API
 
 * Endpoint: `/vehicles`
 * Method: GET
@@ -124,7 +121,7 @@ python main.py
 
 ---
 
-### 4. POST Logging API
+### 3. POST Logging API
 
 * Endpoint: `/logs`
 * Method: POST
