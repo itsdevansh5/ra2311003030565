@@ -1,6 +1,7 @@
 import sys
 import os
 sys.path.append(os.path.abspath(".."))
+import json
 from app.client import fetch_depots, fetch_vehicles
 from app.service import schedule_for_depot
 from logging_middleware import Log
@@ -28,7 +29,8 @@ def main():
             "selectedVehicles": [v["TaskID"] for v in selected]
         })
 
-    print(results)
+    print(json.dumps(results, indent=2))
+    Log("backend", "info", "service", f"Processed {len(depots)} depots successfully")
 
 
 if __name__ == "__main__":

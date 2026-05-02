@@ -25,13 +25,13 @@ def get_selected(dp, vehicles, capacity):
     i = len(vehicles)
     w = capacity
 
-    while i > 0:
+    while i > 0 and w >= 0:
         if dp[i][w] != dp[i-1][w]:
             res.append(vehicles[i-1])
             w -= vehicles[i-1]["Duration"]
         i -= 1
 
-    return res
+    return res[::-1] 
 
 
 def schedule_for_depot(vehicles, capacity):
@@ -39,7 +39,18 @@ def schedule_for_depot(vehicles, capacity):
 
     dp = knapsack(vehicles, capacity)
     selected = get_selected(dp, vehicles, capacity)
+    filtered = []
+    total_duration = 0
 
-    Log("backend", "info", "service", f"Selected {len(selected)} vehicles")
+    for v in selected:
+        if total_duration + v["Duration"] <= capacity:
+            filtered.append(v)
+            total_duration += v["Duration"]
+
+    selected = filtered
+    total_impact = sum(v["Impact"] for v in selected)
+
+    Log("backend", "debug", "service", f"Total duration used: {total_duration}/{capacity}")
+    Log("backend", "info", "service", f"Total impact achieved: {total_impact}")
 
     return selected

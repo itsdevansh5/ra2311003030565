@@ -14,5 +14,5 @@ def Log(stack, level, package, message):
 
         send_log(payload)
 
-    except Exception as e:
-        print("Logging failed:", e)
+    except:
+        pass
