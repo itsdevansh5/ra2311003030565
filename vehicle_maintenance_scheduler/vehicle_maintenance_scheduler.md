@@ -181,3 +181,15 @@ This solution demonstrates:
 * Clean **backend architecture**
 * Proper **API integration**
 * Reliable **logging system**
+
+## 📸 Final Output
+
+### Optimized Vehicle Selection Result
+
+* Vehicles selected based on maximum impact
+* Total duration constrained by depot capacity
+
+![Final Result](./screenshots/r1.png)
+![Final Result](./screenshots/r2.png)
+![Final Result](./screenshots/r3.png)
+![Final Result](./screenshots/r4.png)
