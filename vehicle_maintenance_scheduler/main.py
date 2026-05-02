@@ -1,6 +1,13 @@
+import sys
+import os
+sys.path.append(os.path.abspath(".."))
 from app.client import fetch_depots, fetch_vehicles
 from app.service import schedule_for_depot
 from logging_middleware import Log
+from dotenv import load_dotenv
+
+load_dotenv()
+
 
 def main():
     depots = fetch_depots()
