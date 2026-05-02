@@ -68,9 +68,10 @@ mainrepo/
 │   ├── requirements.txt
 │   ├── .env
 │   ├── screenshots/
-│   │   ├── depots_api.png
-│   │   ├── vehicles_api.png
-│   │   ├── logging_api.png
+│   │   ├── depots.png
+│   │   ├── vehicles.png
+│   │   ├── logs.png
+│   │   ├── auth.png
 ```
 
 ---
@@ -99,25 +100,31 @@ python main.py
 
 ## 📸 API Testing (Postman Screenshots)
 
-### 1. GET Depots API
+### 1. Authentication (Token Generation)
+
+![Auth API](./screenshots/auth.png)
+
+---
+
+### 2. GET Depots API
 
 * Endpoint: `/depots`
 * Method: GET
 
-![Depots API](./screenshots/depots_api.png)
+![Depots API](./screenshots/depots.png)
 
 ---
 
-### 2. GET Vehicles API
+### 3. GET Vehicles API
 
 * Endpoint: `/vehicles`
 * Method: GET
 
-![Vehicles API](./screenshots/vehicles_api.png)
+![Vehicles API](./screenshots/vehicles.png)
 
 ---
 
-### 3. POST Logging API
+### 4. POST Logging API
 
 * Endpoint: `/logs`
 * Method: POST
@@ -133,7 +140,7 @@ Sample Payload:
 }
 ```
 
-![Logging API](./screenshots/logging_api.png)
+![Logging API](./screenshots/logs.png)
 
 ---
 
