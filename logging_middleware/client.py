@@ -18,7 +18,7 @@ def send_log(payload):
             return  
 
         res=requests.post(LOG_API_URL, json=payload, headers=headers, timeout=5)
-        print("LOG STATUS:", res.status_code)
+        
 
     except:
         pass  
