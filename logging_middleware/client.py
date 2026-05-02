@@ -1,10 +1,24 @@
 import requests
+import os
 
 LOG_API_URL = "http://20.207.122.201/evaluation-service/logs"
 
-def send_log(data):
+def get_headers():
+    token = os.getenv("AUTH_TOKEN")
+    if not token:
+        return None
+    return {
+        "Authorization": f"Bearer {token}"
+    }
+
+def send_log(payload):
     try:
-        response = requests.post(LOG_API_URL, json=data, timeout=2)
-        return response.status_code
-    except Exception as e:
-        print("Log API failed:", e)
+        headers = get_headers()
+        if not headers:
+            return  
+
+        res=requests.post(LOG_API_URL, json=payload, headers=headers, timeout=5)
+        print("LOG STATUS:", res.status_code)
+
+    except:
+        pass  
